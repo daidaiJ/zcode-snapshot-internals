@@ -1,0 +1,50 @@
+{
+  "scenario": "e2e",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "totalPromptBlockingMs": 13832,
+  "fileCount": 4909,
+  "includedBytes": 86062537,
+  "encryptedSizeBytes": 22043156,
+  "scanTiming": {
+    "gitMs": 42,
+    "walkMs": 0,
+    "statSampleMs": 2988
+  },
+  "attemptLog": [
+    {
+      "iteration": 0,
+      "hashMs": 64,
+      "reason": null
+    }
+  ],
+  "finalStateAcceptedHash": "eca9aa780773b263e2f7682c9f903d62c6bf60023960c4c769c0a9c7a89ad08c",
+  "phases": {
+    "pack-encrypt-baseline": {
+      "wallMs": 11225,
+      "cpuMs": 11221
+    },
+    "register": {
+      "wallMs": 2,
+      "cpuMs": 2
+    },
+    "flush-upload": {
+      "wallMs": 324,
+      "cpuMs": 357
+    }
+  },
+  "memory": {
+    "peakRssBytes": 122982400,
+    "peakVmHwmBytes": 123588608,
+    "peakCgroupBytes": 288935936,
+    "samples": 288
+  }
+}

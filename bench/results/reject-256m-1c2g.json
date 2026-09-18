@@ -1,0 +1,24 @@
+{
+  "scenario": "reject-after-hash",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "artifactBytes": 268435456,
+  "hashMsBeforeKeyExpired": 790,
+  "digestPrefix": "52eb3f3f9f986abe",
+  "counterfactualPrecheckMs": 0,
+  "phases": {},
+  "memory": {
+    "peakRssBytes": 94859264,
+    "peakVmHwmBytes": 95227904,
+    "peakCgroupBytes": 326324224,
+    "samples": 17
+  }
+}

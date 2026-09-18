@@ -1,0 +1,37 @@
+{
+  "scenario": "manifest-scale",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "count": 100000,
+  "manifestJsonBytes": 8342073,
+  "hashPrefix": "648a58c9a0cd",
+  "heapDeltaMB": 13.2,
+  "phases": {
+    "hash": {
+      "wallMs": 179,
+      "cpuMs": 130
+    },
+    "stringify-x2": {
+      "wallMs": 86,
+      "cpuMs": 92
+    },
+    "parse": {
+      "wallMs": 40,
+      "cpuMs": 77
+    }
+  },
+  "memory": {
+    "peakRssBytes": 0,
+    "peakVmHwmBytes": 0,
+    "peakCgroupBytes": 0,
+    "samples": 0
+  }
+}

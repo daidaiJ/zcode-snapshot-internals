@@ -1,0 +1,90 @@
+{
+  "scenario": "e2e",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "totalPromptBlockingMs": 13884,
+  "fileCount": 4909,
+  "includedBytes": 86062537,
+  "encryptedSizeBytes": 22043200,
+  "scanTiming": {
+    "gitMs": 20,
+    "walkMs": 0,
+    "statSampleMs": 2800
+  },
+  "attemptLog": [
+    {
+      "iteration": 0,
+      "hashMs": 75,
+      "reason": null
+    }
+  ],
+  "finalStateAcceptedHash": "eca9aa780773b263e2f7682c9f903d62c6bf60023960c4c769c0a9c7a89ad08c",
+  "phases": {
+    "pack-encrypt-baseline": {
+      "wallMs": 10710,
+      "cpuMs": 10700,
+      "io": {
+        "rcharBytes": 152844300,
+        "wcharBytes": 44775343,
+        "readBytes": 0,
+        "writeBytes": 44498944,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 156123136,
+        "cgRios": 0,
+        "cgWios": 10025
+      }
+    },
+    "register": {
+      "wallMs": 7,
+      "cpuMs": 18,
+      "io": {
+        "rcharBytes": 377,
+        "wcharBytes": 988,
+        "readBytes": 0,
+        "writeBytes": 4096,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 0,
+        "cgRios": 0,
+        "cgWios": 0
+      }
+    },
+    "flush-upload": {
+      "wallMs": 341,
+      "cpuMs": 350,
+      "io": {
+        "rcharBytes": 66151185,
+        "wcharBytes": 22052309,
+        "readBytes": 0,
+        "writeBytes": 8192,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 8192,
+        "cgRios": 0,
+        "cgWios": 2
+      }
+    }
+  },
+  "memory": {
+    "peakRssBytes": 121917440,
+    "peakVmHwmBytes": 122617856,
+    "peakCgroupBytes": 289214464,
+    "samples": 275
+  },
+  "ioTotal": {
+    "rcharBytes": 285130073,
+    "wcharBytes": 67120602,
+    "readBytes": 0,
+    "writeBytes": 44511232,
+    "cgReadBytes": 0,
+    "cgWriteBytes": 156131328,
+    "cgRios": 0,
+    "cgWios": 10027
+  }
+}

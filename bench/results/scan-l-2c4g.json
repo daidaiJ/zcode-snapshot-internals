@@ -1,0 +1,33 @@
+{
+  "scenario": "scan",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "fileCount": 19594,
+  "includedBytes": 342817698,
+  "excludedBinary": 408,
+  "scanTiming": {
+    "gitMs": 51,
+    "walkMs": 0,
+    "statSampleMs": 10976
+  },
+  "phases": {
+    "scan": {
+      "wallMs": 11027,
+      "cpuMs": 10276
+    }
+  },
+  "memory": {
+    "peakRssBytes": 116736000,
+    "peakVmHwmBytes": 117551104,
+    "peakCgroupBytes": 772210688,
+    "samples": 220
+  }
+}

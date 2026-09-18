@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="767" viewBox="0 0 1400 767" font-family="Consolas, Menlo, monospace">
+<rect width="1400" height="767" fill="#f8f4ec"/>
+<text x="10" y="22" font-size="15" font-weight="bold" fill="#222">pipeline-l · 343MB 明文打包+加密 · 1C2G — total 61.86s</text>
+<text x="10" y="40" font-size="10.5" fill="#555">frames: 241 · width ∝ total CPU time · 根在底部，向上是调用方→被调方 · 颜色: 红=native crypto 压缩 橙=node 内建 绿=bench 重建件</text>
+<rect x="0.0" y="705" width="1380.0" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(root)  :0
+total 61855.1ms  self 0.0ms</title></rect>
+<text x="2.0" y="717" font-size="10.5" fill="#111">(root) </text>
+<rect x="0.0" y="688" width="787.8" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(idle)  :0
+total 35312.2ms  self 35312.2ms</title></rect>
+<text x="2.0" y="700" font-size="10.5" fill="#111">(idle) </text>
+<rect x="787.8" y="688" width="185.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>processTicksAndRejections  task_queues:71
+total 8295.3ms  self 91.2ms</title></rect>
+<text x="789.8" y="700" font-size="10.5" fill="#111">processTicksAndRejections t</text>
+<rect x="787.8" y="671" width="70.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeReadMore_  readable:864
+total 3164.7ms  self 17.3ms</title></rect>
+<text x="789.8" y="683" font-size="10.5" fill="#111">maybeReadM</text>
+<rect x="787.8" y="654" width="70.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 3138.1ms  self 16.1ms</title></rect>
+<text x="789.8" y="666" font-size="10.5" fill="#111">Readable.r</text>
+<rect x="787.8" y="637" width="69.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ReadStream._read  streams:251
+total 3122.0ms  self 8.0ms</title></rect>
+<text x="789.8" y="649" font-size="10.5" fill="#111">ReadStream</text>
+<rect x="787.8" y="620" width="66.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>read  fs:603
+total 2958.8ms  self 41.1ms</title></rect>
+<text x="789.8" y="632" font-size="10.5" fill="#111">read fs:6</text>
+<rect x="787.8" y="603" width="63.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>read  :0
+total 2849.9ms  self 2849.9ms</title></rect>
+<text x="789.8" y="615" font-size="10.5" fill="#111">read </text>
+<rect x="851.4" y="603" width="1.4" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>FSReqCallback  :0
+total 61.9ms  self 61.9ms</title></rect>
+<rect x="853.8" y="620" width="3.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>allocUnsafeSlow  buffer:421
+total 154.1ms  self 0.0ms</title></rect>
+<rect x="853.8" y="603" width="3.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createUnsafeBuffer  buffer:1082
+total 147.2ms  self 110.9ms</title></rect>
+<rect x="853.8" y="586" width="0.4" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>createUnsafeArrayBuffer  :0
+total 18.4ms  self 18.4ms</title></rect>
+<rect x="858.4" y="671" width="42.3" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>runMicrotasks  :0
+total 1895.6ms  self 114.9ms</title></rect>
+<text x="860.4" y="683" font-size="10.5" fill="#111">runMi</text>
+<rect x="858.4" y="654" width="20.5" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeTarEntry  tar.js:43
+total 919.2ms  self 46.5ms</title></rect>
+<rect x="858.4" y="637" width="16.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Writable.write  writable:504
+total 723.4ms  self 1.1ms</title></rect>
+<rect x="858.4" y="620" width="16.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_write  writable:453
+total 722.3ms  self 9.2ms</title></rect>
+<rect x="858.4" y="603" width="15.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeOrBuffer  writable:548
+total 713.1ms  self 0.0ms</title></rect>
+<rect x="858.4" y="586" width="15.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Transform._write  transform:166
+total 710.9ms  self 0.0ms</title></rect>
+<rect x="858.4" y="569" width="15.9" height="15" fill="#b23a8f" rx="1" opacity="0.92"><title>ZlibBase._transform  zlib:385
+total 710.9ms  self 0.0ms</title></rect>
+<rect x="858.4" y="552" width="15.9" height="15" fill="#b23a8f" rx="1" opacity="0.92"><title>processChunk  zlib:492
+total 710.9ms  self 710.9ms</title></rect>
+<rect x="874.6" y="637" width="2.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>alloc  buffer:398
+total 96.7ms  self 0.2ms</title></rect>
+<rect x="874.6" y="620" width="2.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>FastBuffer  buffer:956
+total 96.6ms  self 96.6ms</title></rect>
+<rect x="876.7" y="637" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>once  events:972
+total 35.6ms  self 12.8ms</title></rect>
+<rect x="876.7" y="620" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  events:978
+total 21.7ms  self 9.0ms</title></rect>
+<rect x="878.9" y="654" width="16.7" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeGzipTarToPath  pipeline.js:191
+total 749.7ms  self 19.2ms</title></rect>
+<rect x="878.9" y="637" width="16.2" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeTarEntry  tar.js:43
+total 726.1ms  self 27.9ms</title></rect>
+<rect x="878.9" y="620" width="6.2" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>ustarHeader  tar.js:21
+total 277.7ms  self 50.2ms</title></rect>
+<rect x="878.9" y="603" width="2.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>write  buffer:1114
+total 118.6ms  self 57.9ms</title></rect>
+<rect x="878.9" y="586" width="1.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>utf8Write  buffer:1054
+total 59.6ms  self 16.9ms</title></rect>
+<rect x="878.9" y="569" width="1.0" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 42.7ms  self 42.7ms</title></rect>
+<rect x="881.6" y="603" width="1.1" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>splitTarName  tar.js:7
+total 49.3ms  self 6.9ms</title></rect>
+<rect x="881.6" y="586" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>byteLength  buffer:775
+total 42.4ms  self 2.3ms</title></rect>
+<rect x="881.6" y="569" width="0.9" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 40.1ms  self 40.1ms</title></rect>
+<rect x="882.7" y="603" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>alloc  buffer:398
+total 34.0ms  self 5.7ms</title></rect>
+<rect x="882.7" y="586" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>FastBuffer  buffer:956
+total 27.0ms  self 27.0ms</title></rect>
+<rect x="883.4" y="603" width="0.4" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>octal  tar.js:17
+total 19.5ms  self 19.5ms</title></rect>
+<rect x="885.1" y="620" width="5.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createReadStream  fs:3162
+total 251.6ms  self 22.7ms</title></rect>
+<rect x="885.1" y="603" width="4.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ReadStream  streams:163
+total 217.7ms  self 45.3ms</title></rect>
+<rect x="885.1" y="586" width="3.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable  readable:320
+total 162.2ms  self 63.7ms</title></rect>
+<rect x="885.1" y="569" width="1.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>construct  destroy:244
+total 72.7ms  self 5.6ms</title></rect>
+<rect x="885.1" y="552" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 36.3ms  self 31.8ms</title></rect>
+<rect x="885.9" y="552" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>once  events:652
+total 29.5ms  self 14.7ms</title></rect>
+<rect x="890.7" y="620" width="3.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createAsyncIterator  readable:1359
+total 149.5ms  self 22.3ms</title></rect>
+<rect x="890.7" y="603" width="1.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>eos  end-of-stream:65
+total 82.3ms  self 49.7ms</title></rect>
+<rect x="892.6" y="603" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.on  readable:1127
+total 30.0ms  self 3.5ms</title></rect>
+<rect x="892.6" y="586" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 24.3ms  self 24.3ms</title></rect>
+<rect x="895.7" y="654" width="2.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createAsyncIterator  readable:1359
+total 98.0ms  self 30.4ms</title></rect>
+<rect x="895.7" y="637" width="1.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 63.1ms  self 30.6ms</title></rect>
+<rect x="895.7" y="620" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>fromList  readable:1582
+total 31.4ms  self 31.4ms</title></rect>
+<rect x="900.7" y="671" width="37.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>endReadableNT  readable:1692
+total 1674.9ms  self 7.0ms</title></rect>
+<text x="902.7" y="683" font-size="10.5" fill="#111">endRe</text>
+<rect x="900.7" y="654" width="36.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>destroy  destroy:49
+total 1654.9ms  self 2.2ms</title></rect>
+<text x="902.7" y="666" font-size="10.5" fill="#111">destr</text>
+<rect x="900.7" y="637" width="36.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_destroy  destroy:90
+total 1652.7ms  self 1.1ms</title></rect>
+<text x="902.7" y="649" font-size="10.5" fill="#111">_dest</text>
+<rect x="900.7" y="620" width="36.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ReadStream._destroy  streams:299
+total 1651.7ms  self 3.4ms</title></rect>
+<text x="902.7" y="632" font-size="10.5" fill="#111">ReadS</text>
+<rect x="900.7" y="603" width="36.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>close  streams:118
+total 1648.3ms  self 3.4ms</title></rect>
+<text x="902.7" y="615" font-size="10.5" fill="#111">close</text>
+<rect x="900.7" y="586" width="36.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_close  streams:130
+total 1644.9ms  self 3.3ms</title></rect>
+<text x="902.7" y="598" font-size="10.5" fill="#111">_clos</text>
+<rect x="900.7" y="569" width="36.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>close  fs:502
+total 1641.5ms  self 13.5ms</title></rect>
+<text x="902.7" y="581" font-size="10.5" fill="#111">close</text>
+<rect x="900.7" y="552" width="35.5" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>close  :0
+total 1592.9ms  self 1592.9ms</title></rect>
+<text x="902.7" y="564" font-size="10.5" fill="#111">clos</text>
+<rect x="936.3" y="552" width="0.8" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>FSReqCallback  :0
+total 34.0ms  self 34.0ms</title></rect>
+<rect x="938.1" y="671" width="22.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>constructNT  destroy:269
+total 1015.3ms  self 3.5ms</title></rect>
+<rect x="938.1" y="654" width="22.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_construct  streams:49
+total 1011.8ms  self 5.8ms</title></rect>
+<rect x="938.1" y="637" width="22.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>open  fs:531
+total 1006.0ms  self 18.0ms</title></rect>
+<rect x="938.1" y="620" width="21.1" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>open  :0
+total 947.1ms  self 947.1ms</title></rect>
+<rect x="959.2" y="620" width="0.8" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>FSReqCallback  :0
+total 35.3ms  self 35.3ms</title></rect>
+<rect x="960.7" y="671" width="4.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>resume_  readable:1254
+total 208.5ms  self 1.2ms</title></rect>
+<rect x="960.7" y="654" width="4.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>flow  readable:1280
+total 205.8ms  self 2.3ms</title></rect>
+<rect x="960.7" y="637" width="4.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 203.5ms  self 0.3ms</title></rect>
+<rect x="960.7" y="620" width="3.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 176.4ms  self 0.0ms</title></rect>
+<rect x="960.7" y="603" width="3.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ondata  readable:1007
+total 176.4ms  self 0.0ms</title></rect>
+<rect x="960.7" y="586" width="3.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Writable.write  writable:504
+total 174.2ms  self 0.0ms</title></rect>
+<rect x="960.7" y="569" width="3.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_write  writable:453
+total 174.2ms  self 1.2ms</title></rect>
+<rect x="960.7" y="552" width="3.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeOrBuffer  writable:548
+total 173.0ms  self 2.3ms</title></rect>
+<rect x="960.7" y="535" width="3.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>WriteStream._write  streams:480
+total 149.6ms  self 0.0ms</title></rect>
+<rect x="960.7" y="518" width="3.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeAll  streams:422
+total 149.6ms  self 2.3ms</title></rect>
+<rect x="960.7" y="501" width="3.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>write  fs:806
+total 146.1ms  self 1.2ms</title></rect>
+<rect x="960.7" y="484" width="3.2" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>writeBuffer  :0
+total 142.6ms  self 142.6ms</title></rect>
+<rect x="964.1" y="535" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Transform._write  transform:166
+total 21.1ms  self 0.0ms</title></rect>
+<rect x="964.1" y="518" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_transform  cipher:149
+total 21.1ms  self 14.1ms</title></rect>
+<rect x="964.7" y="620" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ReadStream._read  streams:251
+total 19.3ms  self 0.0ms</title></rect>
+<rect x="964.7" y="603" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>read  fs:603
+total 18.2ms  self 0.0ms</title></rect>
+<rect x="965.4" y="671" width="2.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onConstruct  destroy:272
+total 94.7ms  self 37.3ms</title></rect>
+<rect x="965.4" y="654" width="1.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 55.2ms  self 9.1ms</title></rect>
+<rect x="965.4" y="637" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onceWrapper  events:628
+total 46.0ms  self 3.3ms</title></rect>
+<rect x="965.4" y="620" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  readable:358
+total 30.9ms  self 3.4ms</title></rect>
+<rect x="965.4" y="603" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onConstructed  readable:314
+total 26.4ms  self 5.7ms</title></rect>
+<rect x="965.4" y="586" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeReadMore  readable:857
+total 20.7ms  self 1.1ms</title></rect>
+<rect x="965.4" y="569" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 19.5ms  self 19.5ms</title></rect>
+<rect x="967.5" y="671" width="1.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emitCloseNT  destroy:133
+total 82.4ms  self 1.2ms</title></rect>
+<rect x="967.5" y="654" width="1.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 81.2ms  self 19.1ms</title></rect>
+<rect x="967.5" y="637" width="1.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onclose  end-of-stream:154
+total 59.9ms  self 10.2ms</title></rect>
+<rect x="967.5" y="620" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  util:577
+total 40.2ms  self 10.2ms</title></rect>
+<rect x="967.5" y="603" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  end-of-stream:60
+total 30.0ms  self 9.0ms</title></rect>
+<rect x="967.5" y="586" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>runInAsyncScope  async_hooks:207
+total 19.9ms  self 5.6ms</title></rect>
+<rect x="969.3" y="671" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>processPromiseRejections  promises:439
+total 21.6ms  self 6.9ms</title></rect>
+<rect x="972.9" y="688" width="121.5" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(garbage collector)  :0
+total 5445.2ms  self 5445.2ms</title></rect>
+<text x="974.9" y="700" font-size="10.5" fill="#111">(garbage collector</text>
+<rect x="1094.4" y="688" width="112.8" height="15" fill="#b23a8f" rx="1" opacity="0.92"><title>processCallback  zlib:512
+total 5057.2ms  self 810.6ms</title></rect>
+<text x="1096.4" y="700" font-size="10.5" fill="#111">processCallback </text>
+<rect x="1094.4" y="671" width="77.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  transform:171
+total 3465.8ms  self 6.8ms</title></rect>
+<text x="1096.4" y="683" font-size="10.5" fill="#111">(anonymous)</text>
+<rect x="1094.4" y="654" width="77.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onwrite  writable:615
+total 3451.3ms  self 89.5ms</title></rect>
+<text x="1096.4" y="666" font-size="10.5" fill="#111">onwrite wri</text>
+<rect x="1094.4" y="637" width="73.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>clearBuffer  writable:744
+total 3309.4ms  self 40.1ms</title></rect>
+<text x="1096.4" y="649" font-size="10.5" fill="#111">clearBuffe</text>
+<rect x="1094.4" y="620" width="72.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>doWrite  writable:587
+total 3268.1ms  self 0.8ms</title></rect>
+<text x="1096.4" y="632" font-size="10.5" fill="#111">doWrite wr</text>
+<rect x="1094.4" y="603" width="72.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Transform._write  transform:166
+total 3267.3ms  self 2.5ms</title></rect>
+<text x="1096.4" y="615" font-size="10.5" fill="#111">Transform.</text>
+<rect x="1094.4" y="586" width="72.8" height="15" fill="#b23a8f" rx="1" opacity="0.92"><title>ZlibBase._transform  zlib:385
+total 3264.8ms  self 1.3ms</title></rect>
+<text x="1096.4" y="598" font-size="10.5" fill="#111">ZlibBase._</text>
+<rect x="1094.4" y="569" width="72.8" height="15" fill="#b23a8f" rx="1" opacity="0.92"><title>processChunk  zlib:492
+total 3263.5ms  self 3263.5ms</title></rect>
+<text x="1096.4" y="581" font-size="10.5" fill="#111">processChu</text>
+<rect x="1168.2" y="637" width="1.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>afterWrite  writable:699
+total 52.4ms  self 7.7ms</title></rect>
+<rect x="1168.2" y="620" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 42.5ms  self 7.7ms</title></rect>
+<rect x="1168.2" y="603" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onceWrapper  events:628
+total 34.8ms  self 10.2ms</title></rect>
+<rect x="1168.2" y="586" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>resolver  events:986
+total 19.0ms  self 11.0ms</title></rect>
+<rect x="1171.7" y="671" width="16.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.push  readable:387
+total 731.5ms  self 2.3ms</title></rect>
+<rect x="1171.7" y="654" width="16.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>readableAddChunkPushByteMode  readable:463
+total 729.3ms  self 3.4ms</title></rect>
+<rect x="1171.7" y="637" width="16.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>addChunk  readable:550
+total 725.9ms  self 11.5ms</title></rect>
+<rect x="1171.7" y="620" width="14.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 647.8ms  self 5.6ms</title></rect>
+<rect x="1171.7" y="603" width="14.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ondata  readable:1007
+total 639.9ms  self 0.0ms</title></rect>
+<rect x="1171.7" y="586" width="14.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Writable.write  writable:504
+total 639.9ms  self 2.3ms</title></rect>
+<rect x="1171.7" y="569" width="14.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_write  writable:453
+total 637.6ms  self 2.3ms</title></rect>
+<rect x="1171.7" y="552" width="14.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeOrBuffer  writable:548
+total 633.1ms  self 2.3ms</title></rect>
+<rect x="1171.7" y="535" width="14.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>WriteStream._write  streams:480
+total 630.8ms  self 1.1ms</title></rect>
+<rect x="1171.7" y="518" width="14.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeAll  streams:422
+total 629.6ms  self 6.0ms</title></rect>
+<rect x="1171.7" y="501" width="13.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>write  fs:806
+total 621.3ms  self 14.2ms</title></rect>
+<rect x="1171.7" y="484" width="12.9" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>writeBuffer  :0
+total 577.4ms  self 577.4ms</title></rect>
+<rect x="1184.6" y="484" width="0.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>FSReqCallback  :0
+total 26.3ms  self 26.3ms</title></rect>
+<rect x="1186.2" y="620" width="1.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeReadMore  readable:857
+total 66.7ms  self 0.0ms</title></rect>
+<rect x="1186.2" y="603" width="1.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 66.7ms  self 65.6ms</title></rect>
+<rect x="1188.0" y="671" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>allocUnsafe  buffer:411
+total 38.9ms  self 2.2ms</title></rect>
+<rect x="1188.0" y="654" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>allocate  buffer:436
+total 35.5ms  self 2.3ms</title></rect>
+<rect x="1188.0" y="637" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createUnsafeBuffer  buffer:1082
+total 33.2ms  self 28.7ms</title></rect>
+<rect x="1207.2" y="688" width="63.1" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>scanRepoSnapshot  pipeline.js:82
+total 2830.1ms  self 658.8ms</title></rect>
+<text x="1209.2" y="700" font-size="10.5" fill="#111">scanRepoS</text>
+<rect x="1207.2" y="671" width="15.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>lstat  promises:1022
+total 713.7ms  self 134.7ms</title></rect>
+<rect x="1207.2" y="654" width="12.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>lstat  :0
+total 566.2ms  self 566.2ms</title></rect>
+<rect x="1223.1" y="671" width="15.4" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>readSample  pipeline.js:62
+total 691.3ms  self 7.0ms</title></rect>
+<rect x="1223.1" y="654" width="15.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>open  promises:635
+total 684.1ms  self 111.0ms</title></rect>
+<rect x="1223.1" y="637" width="12.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>openFileHandle  :0
+total 564.9ms  self 564.9ms</title></rect>
+<rect x="1238.5" y="671" width="13.6" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>looksBinary  pipeline.js:73
+total 609.2ms  self 585.7ms</title></rect>
+<rect x="1238.5" y="654" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>includes  buffer:1031
+total 23.5ms  self 0.0ms</title></rect>
+<rect x="1238.5" y="637" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>indexOf  buffer:1023
+total 23.5ms  self 0.0ms</title></rect>
+<rect x="1238.5" y="620" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>bidirectionalIndexOf  buffer:978
+total 23.5ms  self 0.0ms</title></rect>
+<rect x="1238.5" y="603" width="0.5" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 22.9ms  self 22.9ms</title></rect>
+<rect x="1252.1" y="671" width="3.1" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>toRepoRelativePath  pipeline.js:130
+total 140.1ms  self 77.7ms</title></rect>
+<rect x="1252.1" y="654" width="1.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>relative  path:1371
+total 61.3ms  self 34.9ms</title></rect>
+<rect x="1252.1" y="637" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>resolve  path:1260
+total 26.4ms  self 11.3ms</title></rect>
+<rect x="1270.3" y="688" width="34.0" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(program)  :0
+total 1525.6ms  self 1525.6ms</title></rect>
+<text x="1272.3" y="700" font-size="10.5" fill="#111">(pro</text>
+<rect x="1304.4" y="688" width="32.4" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>readSample  pipeline.js:62
+total 1452.6ms  self 44.1ms</title></rect>
+<rect x="1304.4" y="671" width="15.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>read  promises:196
+total 700.3ms  self 18.0ms</title></rect>
+<rect x="1304.4" y="654" width="15.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>fsCall  promises:452
+total 680.0ms  self 32.8ms</title></rect>
+<rect x="1304.4" y="637" width="14.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>read  promises:646
+total 639.2ms  self 70.0ms</title></rect>
+<rect x="1304.4" y="620" width="12.7" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>read  :0
+total 568.0ms  self 568.0ms</title></rect>
+<rect x="1320.0" y="671" width="12.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>close  promises:239
+total 557.0ms  self 22.3ms</title></rect>
+<rect x="1320.0" y="654" width="11.2" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>close  :0
+total 499.9ms  self 499.9ms</title></rect>
+<rect x="1331.2" y="654" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  primordials:447
+total 31.5ms  self 2.9ms</title></rect>
+<rect x="1331.2" y="637" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  primordials:450
+total 28.6ms  self 14.6ms</title></rect>
+<rect x="1332.4" y="671" width="2.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>alloc  buffer:398
+total 117.2ms  self 4.2ms</title></rect>
+<rect x="1332.4" y="654" width="2.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>FastBuffer  buffer:956
+total 111.1ms  self 111.1ms</title></rect>
+<rect x="1335.0" y="671" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>subarray  buffer:1181
+total 30.6ms  self 13.4ms</title></rect>
+<rect x="1336.8" y="688" width="11.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>processTimers  timers:506
+total 519.6ms  self 4.6ms</title></rect>
+<rect x="1336.8" y="671" width="11.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>listOnTimeout  timers:526
+total 515.0ms  self 17.2ms</title></rect>
+<rect x="1336.8" y="654" width="11.0" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  metrics.js:30
+total 493.4ms  self 9.7ms</title></rect>
+<rect x="1336.8" y="637" width="6.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>memoryUsage  per_thread:220
+total 267.4ms  self 2.8ms</title></rect>
+<rect x="1336.8" y="620" width="5.9" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>memoryUsage  :0
+total 264.6ms  self 264.6ms</title></rect>
+<rect x="1342.8" y="637" width="4.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>readFileSync  fs:433
+total 216.4ms  self 3.4ms</title></rect>
+<rect x="1342.8" y="620" width="4.5" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>readFileUtf8  :0
+total 199.5ms  self 199.5ms</title></rect>
+<rect x="1348.4" y="688" width="10.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapper  fs:667
+total 467.6ms  self 26.3ms</title></rect>
+<rect x="1348.4" y="671" width="9.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  streams:265
+total 441.3ms  self 13.8ms</title></rect>
+<rect x="1348.4" y="654" width="6.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.push  readable:387
+total 294.8ms  self 11.7ms</title></rect>
+<rect x="1348.4" y="637" width="6.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>readableAddChunkPushByteMode  readable:463
+total 283.1ms  self 9.0ms</title></rect>
+<rect x="1348.4" y="620" width="5.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>addChunk  readable:550
+total 250.2ms  self 13.0ms</title></rect>
+<rect x="1348.4" y="603" width="3.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 143.1ms  self 1.4ms</title></rect>
+<rect x="1348.4" y="586" width="2.1" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  pipeline.js:253
+total 96.3ms  self 1.1ms</title></rect>
+<rect x="1348.4" y="569" width="2.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>update  hash:132
+total 95.2ms  self 95.2ms</title></rect>
+<rect x="1350.5" y="586" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ondata  readable:1007
+total 43.2ms  self 1.1ms</title></rect>
+<rect x="1350.5" y="569" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Writable.write  writable:504
+total 42.0ms  self 0.0ms</title></rect>
+<rect x="1350.5" y="552" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_write  writable:453
+total 42.0ms  self 0.0ms</title></rect>
+<rect x="1350.5" y="535" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeOrBuffer  writable:548
+total 42.0ms  self 0.0ms</title></rect>
+<rect x="1350.5" y="518" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Transform._write  transform:166
+total 42.0ms  self 0.0ms</title></rect>
+<rect x="1350.5" y="501" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_transform  cipher:149
+total 42.0ms  self 35.0ms</title></rect>
+<rect x="1351.6" y="603" width="1.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emitReadable  readable:819
+total 69.1ms  self 8.9ms</title></rect>
+<rect x="1351.6" y="586" width="1.3" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 60.2ms  self 59.1ms</title></rect>
+<rect x="1353.1" y="603" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeReadMore  readable:857
+total 25.0ms  self 3.4ms</title></rect>
+<rect x="1353.1" y="586" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 21.7ms  self 21.7ms</title></rect>
+<rect x="1354.0" y="620" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onEofChunk  readable:788
+total 19.4ms  self 5.6ms</title></rect>
+<rect x="1355.0" y="654" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>allocUnsafeSlow  buffer:421
+total 76.9ms  self 1.1ms</title></rect>
+<rect x="1355.0" y="637" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createUnsafeBuffer  buffer:1082
+total 75.8ms  self 62.2ms</title></rect>
+<rect x="1356.7" y="654" width="1.2" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>copy  buffer:831
+total 54.7ms  self 3.4ms</title></rect>
+<rect x="1356.7" y="637" width="1.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>copyImpl  buffer:207
+total 51.3ms  self 8.0ms</title></rect>
+<rect x="1356.7" y="620" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>_copyActual  buffer:243
+total 43.2ms  self 1.2ms</title></rect>
+<rect x="1356.7" y="603" width="0.9" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 42.1ms  self 42.1ms</title></rect>
+<rect x="1358.8" y="688" width="6.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  fs:186
+total 301.4ms  self 21.6ms</title></rect>
+<rect x="1358.8" y="671" width="3.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  streams:131
+total 140.9ms  self 24.3ms</title></rect>
+<rect x="1358.8" y="654" width="2.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onDestroy  destroy:93
+total 114.3ms  self 6.8ms</title></rect>
+<rect x="1358.8" y="637" width="2.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 107.5ms  self 105.2ms</title></rect>
+<rect x="1362.0" y="671" width="3.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  streams:73
+total 136.6ms  self 11.3ms</title></rect>
+<rect x="1362.0" y="654" width="2.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  destroy:300
+total 120.9ms  self 3.6ms</title></rect>
+<rect x="1362.0" y="637" width="2.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 117.3ms  self 113.8ms</title></rect>
+<rect x="1365.5" y="688" width="3.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapper  fs:807
+total 162.4ms  self 11.1ms</title></rect>
+<rect x="1365.5" y="671" width="3.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  streams:423
+total 151.3ms  self 13.8ms</title></rect>
+<rect x="1365.5" y="654" width="3.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  streams:482
+total 137.4ms  self 1.1ms</title></rect>
+<rect x="1365.5" y="637" width="3.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>onwrite  writable:615
+total 135.2ms  self 3.5ms</title></rect>
+<rect x="1365.5" y="620" width="2.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>clearBuffer  writable:744
+total 125.9ms  self 4.6ms</title></rect>
+<rect x="1365.5" y="603" width="2.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>doWrite  writable:587
+total 121.3ms  self 1.8ms</title></rect>
+<rect x="1365.5" y="586" width="1.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>WriteStream._write  streams:480
+total 81.8ms  self 0.0ms</title></rect>
+<rect x="1365.5" y="569" width="1.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writeAll  streams:422
+total 81.8ms  self 2.4ms</title></rect>
+<rect x="1365.5" y="552" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>write  fs:806
+total 78.3ms  self 2.2ms</title></rect>
+<rect x="1365.5" y="535" width="1.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>writeBuffer  :0
+total 72.5ms  self 72.5ms</title></rect>
+<rect x="1367.4" y="586" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>WriteStream._writev  streams:497
+total 37.8ms  self 0.0ms</title></rect>
+<rect x="1367.4" y="569" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>writevAll  streams:451
+total 37.8ms  self 37.3ms</title></rect>
+<rect x="1369.2" y="688" width="1.9" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  run_main_module:1
+total 86.0ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="671" width="1.9" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>executeUserEntryPoint  run_main:157
+total 84.4ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="654" width="1.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapModuleLoad  loader:237
+total 84.4ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="637" width="1.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1193
+total 84.4ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="620" width="1.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1490
+total 83.2ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="603" width="1.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1878
+total 83.2ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="586" width="1.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1731
+total 83.2ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="569" width="1.8" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  run.js:1
+total 82.1ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="552" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>require  helpers:146
+total 75.1ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="535" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1519
+total 75.1ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="518" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapModuleLoad  loader:237
+total 75.1ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="501" width="1.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1193
+total 75.1ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="484" width="1.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1490
+total 63.4ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="467" width="1.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1878
+total 62.2ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="450" width="1.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1731
+total 62.2ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="433" width="1.3" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  pipeline.js:1
+total 57.8ms  self 0.0ms</title></rect>
+<rect x="1369.2" y="416" width="1.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>generateKeyPairSync  keygen:101
+total 49.8ms  self 49.8ms</title></rect>
+<rect x="1371.1" y="688" width="1.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>open  promises:635
+total 50.9ms  self 9.1ms</title></rect>
+<rect x="1371.1" y="671" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>FileHandle  promises:158
+total 41.7ms  self 21.6ms</title></rect>
+<rect x="1372.2" y="688" width="1.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createAsyncIterator  readable:1359
+total 48.8ms  self 1.2ms</title></rect>
+<rect x="1372.2" y="671" width="1.1" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 47.7ms  self 6.8ms</title></rect>
+<rect x="1372.2" y="654" width="0.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>endReadable  readable:1682
+total 40.9ms  self 5.5ms</title></rect>
+<rect x="1372.2" y="637" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 35.4ms  self 31.9ms</title></rect>
+<rect x="1373.3" y="688" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>ChildProcess._handle.onexit  child_process:269
+total 44.9ms  self 0.0ms</title></rect>
+<rect x="1373.3" y="671" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeClose  child_process:1097
+total 44.9ms  self 0.0ms</title></rect>
+<rect x="1373.3" y="654" width="1.0" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>emit  events:466
+total 44.9ms  self 0.0ms</title></rect>
+<rect x="1373.3" y="637" width="1.0" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  pipeline.js:33
+total 44.9ms  self 4.8ms</title></rect>
+<rect x="1373.3" y="620" width="0.9" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  pipeline.js:35
+total 40.1ms  self 2.4ms</title></rect>
+<rect x="1373.3" y="603" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>join  path:1347
+total 37.6ms  self 2.7ms</title></rect>
+<rect x="1373.3" y="586" width="0.8" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>normalize  path:1308
+total 34.9ms  self 30.3ms</title></rect>
+<rect x="1374.3" y="688" width="0.9" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeTarEntry  tar.js:43
+total 40.5ms  self 12.5ms</title></rect>
+<rect x="1374.3" y="671" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createAsyncIterator  readable:1359
+total 28.0ms  self 0.0ms</title></rect>
+<rect x="1374.3" y="654" width="0.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 28.0ms  self 5.6ms</title></rect>
+<rect x="1374.3" y="637" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>endReadable  readable:1682
+total 22.4ms  self 2.2ms</title></rect>
+<rect x="1374.3" y="620" width="0.5" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>nextTick  task_queues:111
+total 20.2ms  self 20.2ms</title></rect>
+<rect x="1375.2" y="688" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>lstat  promises:1022
+total 32.5ms  self 15.9ms</title></rect>
+<rect x="1375.9" y="688" width="0.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>maybeReadMore_  readable:864
+total 29.5ms  self 29.5ms</title></rect>
+<rect x="1376.6" y="688" width="0.6" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>runPipeline  run.js:43
+total 29.1ms  self 0.0ms</title></rect>
+<rect x="1377.2" y="688" width="0.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>read  promises:646
+total 18.3ms  self 18.3ms</title></rect>
+</svg>

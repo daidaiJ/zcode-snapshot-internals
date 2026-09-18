@@ -1,0 +1,34 @@
+{
+  "scenario": "pipeline-baseline",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "fileCount": 19594,
+  "includedBytes": 342817698,
+  "scanTiming": {
+    "gitMs": 50,
+    "walkMs": 0,
+    "statSampleMs": 10105
+  },
+  "plaintextBytes": 342817698,
+  "encryptedSizeBytes": 87787930,
+  "phases": {
+    "pack-encrypt-baseline": {
+      "wallMs": 33519,
+      "cpuMs": 48485
+    }
+  },
+  "memory": {
+    "peakRssBytes": 146014208,
+    "peakVmHwmBytes": 146628608,
+    "peakCgroupBytes": 967471104,
+    "samples": 872
+  }
+}

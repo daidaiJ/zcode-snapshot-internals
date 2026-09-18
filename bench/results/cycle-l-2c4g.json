@@ -1,0 +1,44 @@
+{
+  "scenario": "cycle",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "mutateMs": 178,
+  "fileCount": 19594,
+  "includedBytes": 342817698,
+  "baselineEncryptedBytes": 87787930,
+  "incrementEncryptedBytes": 139538,
+  "incrementFileCount": 0,
+  "deltaDetectedChanges": 0,
+  "deltaDeleted": 0,
+  "mutatedFiles": 50,
+  "deltaMissed": 50,
+  "scanTiming": {
+    "gitMs": 60,
+    "walkMs": 0,
+    "statSampleMs": 11082
+  },
+  "phases": {
+    "pack-encrypt-baseline": {
+      "wallMs": 32920,
+      "cpuMs": 49053
+    },
+    "pack-encrypt-increment": {
+      "wallMs": 51,
+      "cpuMs": 54
+    }
+  },
+  "memory": {
+    "peakRssBytes": 149606400,
+    "peakVmHwmBytes": 151330816,
+    "peakCgroupBytes": 981118976,
+    "samples": 1099
+  }
+}

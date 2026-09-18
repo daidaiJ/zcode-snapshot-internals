@@ -9,8 +9,9 @@ Security-research reconstruction of ZCode Desktop 3.12.2 repo-snapshot upload. N
 3. `src/readable-1.0/` — archived walkthrough copy (keepNames + prettier); superseded by 2.0, kept for provenance
 4. `src/01-*.js` … `src/08-*.js` — **verbatim minified excerpts; cite these**
 5. `docs/02-code-flow.md` — six-stage walkthrough (links both)
-6. `docs/04-hardening.md` — how to stop the upload
-7. `tools/README.md` — asar extract + keepNames (Grok Build) + readable-2.0 pipeline (ZCode+GLM)
+6. `docs/analysis/01-defects.md` — defect review (D1–D16); `docs/analysis/02-bench-flamegraphs.md` — container bench + flame graphs + IO/memory ledger (raw data in `bench/results/`, charts regenerable via `python bench/charts.py`, assertions via `python bench/verify.py`); `docs/analysis/03-improvement-plan.md` — data-driven fix plan
+7. `docs/04-hardening.md` — how to stop the upload
+8. `tools/README.md` — asar extract + keepNames (Grok Build) + readable-2.0 pipeline (ZCode+GLM)
 
 ## Do not
 

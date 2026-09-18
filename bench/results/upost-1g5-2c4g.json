@@ -1,0 +1,33 @@
+{
+  "scenario": "upload-probe",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 1536,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "uploadWallMs": 5019,
+  "uploadOk": true,
+  "artifactBytes": 1610612736,
+  "effectiveMbps": 2448.3,
+  "phases": {
+    "gen-artifact": {
+      "wallMs": 8761,
+      "cpuMs": 1845
+    },
+    "upload-post": {
+      "wallMs": 5761,
+      "cpuMs": 6493
+    }
+  },
+  "memory": {
+    "peakRssBytes": 106016768,
+    "peakVmHwmBytes": 106483712,
+    "peakCgroupBytes": 1712340992,
+    "samples": 117
+  }
+}

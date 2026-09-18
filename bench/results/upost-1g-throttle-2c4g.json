@@ -1,0 +1,34 @@
+{
+  "scenario": "upload-probe",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 1024,
+    "method": "post",
+    "throttleMbps": 100
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "uploadWallMs": 58236,
+  "uploadOk": false,
+  "uploadMessage": "The operation was aborted due to timeout",
+  "artifactBytes": 1073741824,
+  "effectiveMbps": 140.7,
+  "phases": {
+    "gen-artifact": {
+      "wallMs": 1003,
+      "cpuMs": 988
+    },
+    "upload-post": {
+      "wallMs": 60004,
+      "cpuMs": 6235
+    }
+  },
+  "memory": {
+    "peakRssBytes": 107978752,
+    "peakVmHwmBytes": 108417024,
+    "peakCgroupBytes": 1167269888,
+    "samples": 1202
+  }
+}

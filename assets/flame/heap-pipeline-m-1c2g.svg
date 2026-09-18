@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="563" viewBox="0 0 1400 563" font-family="Consolas, Menlo, monospace">
+<rect width="1400" height="563" fill="#f8f4ec"/>
+<text x="10" y="22" font-size="15" font-weight="bold" fill="#222">heap-pipeline-m · 打包+加密全链分配热点 · 1C2G — 采样分配 2.0MB</text>
+<text x="10" y="40" font-size="10.5" fill="#555">frames: 42 · width ∝ total 分配字节 · 根在底部 · 颜色: 红=native crypto 紫=native streams 橙=node 内建 绿=bench 重建件</text>
+<rect x="0.0" y="501" width="1380.0" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(root)  :0
+total 2.0MB  self 0.0MB</title></rect>
+<text x="2.0" y="513" font-size="10.5" fill="#111">(root) </text>
+<rect x="0.0" y="484" width="690.4" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>processTicksAndRejections  task_queues:71
+total 1.0MB  self 0.0MB</title></rect>
+<text x="2.0" y="496" font-size="10.5" fill="#111">processTicksAndRejections task_queues:71</text>
+<rect x="0.0" y="467" width="345.7" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="479" font-size="10.5" fill="#111">(anonymous) </text>
+<rect x="0.0" y="450" width="345.7" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeGzipTarToPath  pipeline.js:191
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="462" font-size="10.5" fill="#111">writeGzipTarToPath pipeline.js:191</text>
+<rect x="0.0" y="433" width="345.7" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>writeTarEntry  tar.js:43
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="445" font-size="10.5" fill="#111">writeTarEntry tar.js:43</text>
+<rect x="0.0" y="416" width="345.7" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>next  :0
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="428" font-size="10.5" fill="#111">next </text>
+<rect x="0.0" y="399" width="345.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>createAsyncIterator  readable:1359
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="411" font-size="10.5" fill="#111">createAsyncIterator readable:1359</text>
+<rect x="0.0" y="382" width="345.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>Readable.read  readable:647
+total 0.5MB  self 0.0MB</title></rect>
+<text x="2.0" y="394" font-size="10.5" fill="#111">Readable.read readable:647</text>
+<rect x="0.0" y="365" width="345.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>howMuchToRead  readable:630
+total 0.5MB  self 0.5MB</title></rect>
+<text x="2.0" y="377" font-size="10.5" fill="#111">howMuchToRead readable:630</text>
+<rect x="345.7" y="467" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>finish  writable:949
+total 0.5MB  self 0.5MB</title></rect>
+<text x="347.7" y="479" font-size="10.5" fill="#111">finish writable:949</text>
+<rect x="690.4" y="484" width="689.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="496" font-size="10.5" fill="#111">(anonymous) </text>
+<rect x="690.4" y="467" width="689.6" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>executeUserEntryPoint  run_main:157
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="479" font-size="10.5" fill="#111">executeUserEntryPoint run_main:157</text>
+<rect x="690.4" y="450" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapModuleLoad  loader:237
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="462" font-size="10.5" fill="#111">wrapModuleLoad loader:237</text>
+<rect x="690.4" y="433" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1193
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="445" font-size="10.5" fill="#111">(anonymous) loader:1193</text>
+<rect x="690.4" y="416" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1490
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="428" font-size="10.5" fill="#111">(anonymous) loader:1490</text>
+<rect x="690.4" y="399" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1878
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="411" font-size="10.5" fill="#111">(anonymous) loader:1878</text>
+<rect x="690.4" y="382" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1731
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="394" font-size="10.5" fill="#111">(anonymous) loader:1731</text>
+<rect x="690.4" y="365" width="689.6" height="15" fill="#e08b3a" rx="1" opacity="0.92"><title>(anonymous)  :0
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="377" font-size="10.5" fill="#111">(anonymous) </text>
+<rect x="690.4" y="348" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>require  helpers:146
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="360" font-size="10.5" fill="#111">require helpers:146</text>
+<rect x="690.4" y="331" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1519
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="343" font-size="10.5" fill="#111">(anonymous) loader:1519</text>
+<rect x="690.4" y="314" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapModuleLoad  loader:237
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="326" font-size="10.5" fill="#111">wrapModuleLoad loader:237</text>
+<rect x="690.4" y="297" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1193
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="309" font-size="10.5" fill="#111">(anonymous) loader:1193</text>
+<rect x="690.4" y="280" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1490
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="292" font-size="10.5" fill="#111">(anonymous) loader:1490</text>
+<rect x="690.4" y="263" width="689.6" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1878
+total 1.0MB  self 0.0MB</title></rect>
+<text x="692.4" y="275" font-size="10.5" fill="#111">(anonymous) loader:1878</text>
+<rect x="690.4" y="246" width="344.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>loadSource  loader:1797
+total 0.5MB  self 0.0MB</title></rect>
+<text x="692.4" y="258" font-size="10.5" fill="#111">loadSource loader:1797</text>
+<rect x="690.4" y="229" width="344.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>defaultLoadImpl  loader:1112
+total 0.5MB  self 0.0MB</title></rect>
+<text x="692.4" y="241" font-size="10.5" fill="#111">defaultLoadImpl loader:1112</text>
+<rect x="690.4" y="212" width="344.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>readFileSync  fs:433
+total 0.5MB  self 0.0MB</title></rect>
+<text x="692.4" y="224" font-size="10.5" fill="#111">readFileSync fs:433</text>
+<rect x="690.4" y="195" width="344.9" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>getOptions  utils:320
+total 0.5MB  self 0.5MB</title></rect>
+<text x="692.4" y="207" font-size="10.5" fill="#111">getOptions utils:320</text>
+<rect x="1035.3" y="246" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1731
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="258" font-size="10.5" fill="#111">(anonymous) loader:1731</text>
+<rect x="1035.3" y="229" width="344.7" height="15" fill="#3a7d44" rx="1" opacity="0.92"><title>(anonymous)  pipeline.js:1
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="241" font-size="10.5" fill="#111">(anonymous) pipeline.js:1</text>
+<rect x="1035.3" y="212" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>require  helpers:146
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="224" font-size="10.5" fill="#111">require helpers:146</text>
+<rect x="1035.3" y="195" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1519
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="207" font-size="10.5" fill="#111">(anonymous) loader:1519</text>
+<rect x="1035.3" y="178" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>wrapModuleLoad  loader:237
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="190" font-size="10.5" fill="#111">wrapModuleLoad loader:237</text>
+<rect x="1035.3" y="161" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  loader:1193
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="173" font-size="10.5" fill="#111">(anonymous) loader:1193</text>
+<rect x="1035.3" y="144" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>loadBuiltinWithHooks  loader:1159
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="156" font-size="10.5" fill="#111">loadBuiltinWithHooks loader:1159</text>
+<rect x="1035.3" y="127" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>loadBuiltinModule  helpers:113
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="139" font-size="10.5" fill="#111">loadBuiltinModule helpers:113</text>
+<rect x="1035.3" y="110" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>compileForPublicLoader  realm:332
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="122" font-size="10.5" fill="#111">compileForPublicLoader realm:332</text>
+<rect x="1035.3" y="93" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>compileForInternalLoader  realm:385
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="105" font-size="10.5" fill="#111">compileForInternalLoader realm:385</text>
+<rect x="1035.3" y="76" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  child_process:1
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="88" font-size="10.5" fill="#111">(anonymous) child_process:1</text>
+<rect x="1035.3" y="59" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>requireBuiltin  realm:422
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="71" font-size="10.5" fill="#111">requireBuiltin realm:422</text>
+<rect x="1035.3" y="42" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>compileForInternalLoader  realm:385
+total 0.5MB  self 0.0MB</title></rect>
+<text x="1037.3" y="54" font-size="10.5" fill="#111">compileForInternalLoader realm:385</text>
+<rect x="1035.3" y="25" width="344.7" height="15" fill="#c9a227" rx="1" opacity="0.92"><title>(anonymous)  child_process:1
+total 0.5MB  self 0.5MB</title></rect>
+<text x="1037.3" y="37" font-size="10.5" fill="#111">(anonymous) child_process:1</text>
+</svg>

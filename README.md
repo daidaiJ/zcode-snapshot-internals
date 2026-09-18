@@ -27,6 +27,10 @@
 │   ├── 03-design-notes.md         ← 设计实现解析：10 个性能优化点点评 + 槽点
 │   ├── 04-hardening.md            ← 加固方案：三平台阻断方法与回滚
 │   └── 05-official-response.md    ← 官方回应逐条对照：事实面敲定
+├── docs/analysis/
+│   ├── 01-defects.md              ← 缺陷侦探审查：16 条缺陷/热点（D1–D16，P0–P3）
+│   ├── 02-bench-flamegraphs.md    ← 低资源容器压测 + 火焰图 + IO/内存账单（配图表）
+│   └── 03-improvement-plan.md     ← 数据驱动的修复蓝图（实测痛点→改法→A/B 验证）
 ├── src/readable-2.0/              ← 走读副本 2.0（语义命名 + 注释，从这里开始读）
 │   └── README.md                  ← 入口：命名依据、minified 对照表、修正记录
 ├── src/readable-1.0/              ← 走读副本 1.0（keepNames + prettier，存档）
@@ -40,6 +44,10 @@
 │   ├── 06-upload-worker.js        ← 上传状态机（失败退避/晋升/丢弃）
 │   ├── 07-pending-manager.js      ← 待传队列（接收哈希仅成功后落盘）
 │   └── 08-credential-parsing.js   ← 凭证响应解析（data.oss / callback）
+├── bench/                         ← 重建件压测（docker 真配额，见 bench/README.md；非 ZCode 代码）
+│   ├── lib/ · run.js · matrix*.sh ← 逐函数对齐重建件 + 场景矩阵
+│   ├── flame.js · heapflame.js    ← .cpuprofile/.heapprofile → 火焰图 SVG
+│   └── charts.py                  ← 结果 JSON → 分析图表 SVG
 ├── tools/                         ← 可复现脚本（见 tools/README.md）
 │   ├── extract_snapshot.py        ← asar host bundle → src/readable-1.0 切片
 │   ├── beautify_snapshot.py       ← keepNames 回填 + 原文引用头（产出 1.0）
@@ -52,6 +60,8 @@
 │   ├── upload-flow.svg            ← 上传时序图
 │   ├── packaging.svg              ← 快照内容双车道图
 │   ├── design-optimizations.svg   ← 设计优化点图
+│   ├── charts/                    ← 压测分析图表（docs/analysis/02 配图）
+│   ├── flame/                     ← CPU/分配火焰图（docs/analysis/02 配图）
 │   └── zcode-snapshot-report.pdf  ← 完整取证报告（同 docs，排版版）
 ```
 
@@ -66,6 +76,8 @@
 意味着：对方持有解密私钥；`.git` 历史里的一切（含已删除文件、历史提交中的凭据）都在其可解密范围内。详见 [docs/01-trace-chain.md](docs/01-trace-chain.md)。
 
 走读从 [src/readable-2.0/](src/readable-2.0/README.md) 开始（1.0 为[存档](src/readable-1.0/README.md)）。**引用、取证、对照请用 [src/01-sidecar-service.js](src/01-sidecar-service.js) … [src/08-credential-parsing.js](src/08-credential-parsing.js)**（公开发行包 minified 原文摘录）。readable 1.0/2.0 都是转写副本，每份文件头都链回对应原文，不当出处。
+
+缺陷与性能定量分析见 [docs/analysis/](docs/analysis/)：[01-defects](docs/analysis/01-defects.md)（16 条缺陷/热点审查）+ [02-bench-flamegraphs](docs/analysis/02-bench-flamegraphs.md)（docker 1C/2C 真配额压测、火焰图、IO/内存账单）。
 
 ## 关键标识符对照（minified → 语义名）
 

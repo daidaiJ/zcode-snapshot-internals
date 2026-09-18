@@ -1,0 +1,63 @@
+{
+  "scenario": "upload-probe",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 512,
+    "method": "post",
+    "throttleMbps": 100
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "uploadWallMs": 42963,
+  "uploadOk": true,
+  "artifactBytes": 536870912,
+  "effectiveMbps": 95.3,
+  "phases": {
+    "gen-artifact": {
+      "wallMs": 713,
+      "cpuMs": 697,
+      "io": {
+        "rcharBytes": 125,
+        "wcharBytes": 536870928,
+        "readBytes": 0,
+        "writeBytes": 536870912,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 0,
+        "cgRios": 0,
+        "cgWios": 0
+      }
+    },
+    "upload-post": {
+      "wallMs": 43756,
+      "cpuMs": 4767,
+      "io": {
+        "rcharBytes": 1075286707,
+        "wcharBytes": 536937797,
+        "readBytes": 0,
+        "writeBytes": 0,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 536870912,
+        "cgRios": 0,
+        "cgWios": 128
+      }
+    }
+  },
+  "memory": {
+    "peakRssBytes": 109748224,
+    "peakVmHwmBytes": 110436352,
+    "peakCgroupBytes": 616300544,
+    "samples": 872
+  },
+  "ioTotal": {
+    "rcharBytes": 1075289675,
+    "wcharBytes": 1073808749,
+    "readBytes": 0,
+    "writeBytes": 536870912,
+    "cgReadBytes": 0,
+    "cgWriteBytes": 536870912,
+    "cgRios": 0,
+    "cgWios": 128
+  }
+}

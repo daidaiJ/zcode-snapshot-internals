@@ -1,0 +1,54 @@
+{
+  "scenario": "pipeline-baseline",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 256,
+    "method": "post",
+    "throttleMbps": 0
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "fileCount": 19594,
+  "includedBytes": 342817698,
+  "scanTiming": {
+    "gitMs": 51,
+    "walkMs": 0,
+    "statSampleMs": 11842
+  },
+  "plaintextBytes": 342817698,
+  "encryptedSizeBytes": 87787930,
+  "phases": {
+    "pack-encrypt-baseline": {
+      "wallMs": 48611,
+      "cpuMs": 48493,
+      "io": {
+        "rcharBytes": 609196399,
+        "wcharBytes": 178605466,
+        "readBytes": 0,
+        "writeBytes": 177205248,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 67162112,
+        "cgRios": 0,
+        "cgWios": 2082
+      }
+    }
+  },
+  "memory": {
+    "peakRssBytes": 131022848,
+    "peakVmHwmBytes": 132472832,
+    "peakCgroupBytes": 995672064,
+    "samples": 1197
+  },
+  "ioTotal": {
+    "rcharBytes": 873541156,
+    "wcharBytes": 179814304,
+    "readBytes": 0,
+    "writeBytes": 177205248,
+    "cgReadBytes": 0,
+    "cgWriteBytes": 266203136,
+    "cgRios": 0,
+    "cgWios": 24722
+  }
+}

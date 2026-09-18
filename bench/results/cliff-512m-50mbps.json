@@ -1,0 +1,64 @@
+{
+  "scenario": "upload-probe",
+  "args": {
+    "repo": "/tmp/repo",
+    "mb": 512,
+    "method": "post",
+    "throttleMbps": 50
+  },
+  "meta": {
+    "node": "v22.23.2",
+    "pid": 1
+  },
+  "uploadWallMs": 58449,
+  "uploadOk": false,
+  "uploadMessage": "The operation was aborted due to timeout",
+  "artifactBytes": 536870912,
+  "effectiveMbps": 70.1,
+  "phases": {
+    "gen-artifact": {
+      "wallMs": 694,
+      "cpuMs": 678,
+      "io": {
+        "rcharBytes": 125,
+        "wcharBytes": 536870928,
+        "readBytes": 0,
+        "writeBytes": 536870912,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 0,
+        "cgRios": 0,
+        "cgWios": 0
+      }
+    },
+    "upload-post": {
+      "wallMs": 60009,
+      "cpuMs": 3923,
+      "io": {
+        "rcharBytes": 758357906,
+        "wcharBytes": 380230959,
+        "readBytes": 0,
+        "writeBytes": 0,
+        "cgReadBytes": 0,
+        "cgWriteBytes": 536870912,
+        "cgRios": 0,
+        "cgWios": 128
+      }
+    }
+  },
+  "memory": {
+    "peakRssBytes": 105951232,
+    "peakVmHwmBytes": 106487808,
+    "peakCgroupBytes": 612966400,
+    "samples": 1207
+  },
+  "ioTotal": {
+    "rcharBytes": 919170822,
+    "wcharBytes": 917122094,
+    "readBytes": 0,
+    "writeBytes": 536870912,
+    "cgReadBytes": 0,
+    "cgWriteBytes": 536870912,
+    "cgRios": 0,
+    "cgWios": 128
+  }
+}
