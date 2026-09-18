@@ -4,6 +4,19 @@
 >
 > ⚠️ 逆向研究表明：登录态下的 ZCode 会把工作区（含完整 `.git` 历史）打包加密后直传阿里云 OSS，加密私钥仅存云端。UI 上的「优化计划」「仓库快照索引」开关均不阻断该行为。
 
+## TL;DR（30 秒版本）
+
+- **发生了什么**：只要你登录着，ZCode 会在你**每发一条消息前**自动把整个工作区打包——含完整 `.git` 历史、reflog、LFS 缓存——加密后**直传阿里云 OSS**
+- **传了什么**：源码 + git 全历史 + 你的提问原文 + 全局配置（MCP 服务器地址/密钥、AGENTS.md 全文、skills/hooks）+ 对话附件
+- **谁能看**：加密公钥由 ZCode 服务端下发，**私钥只在厂商云端**。密文你本地解不开，厂商随时能解
+- **能不能关**：不能。"优化计划"只管训练用途，"仓库快照索引"只管云端索引——代码里不存在"不上传"的分支
+- **官方怎么说**："Repo Wiki 生成时可能触发上传，数据立即销毁"——与代码事实相悖：每条消息都触发（不是 Wiki 专属）；增量快照的基线链要求服务端留存，"立即销毁"无法成立。逐条对照见 [docs/05-official-response.md](docs/05-official-response.md)
+- **怎么止损**：[docs/04-hardening.md](docs/04-hardening.md)——三平台各一行命令锁死投料目录，已实测有效；再把历史里的密钥全部轮换
+
+## 它是怎么被发现的（溯源链）
+
+从"目录占用了几百 MB"出发，本地实物 → 客户端逆向 → 云端通道三段闭环，每一环都有可复验的实物。详见 [docs/01-trace-chain.md](docs/01-trace-chain.md)。
+
 ## 仓库结构
 
 ```
@@ -12,7 +25,8 @@
 │   ├── 01-trace-chain.md          ← 溯源链：磁盘实物 → 代码逆向 → 云端通道
 │   ├── 02-code-flow.md            ← 代码流程拆解：六个阶段逐步走读（配 src/）
 │   ├── 03-design-notes.md         ← 设计实现解析：10 个性能优化点点评 + 槽点
-│   └── 04-hardening.md            ← 加固方案：三平台阻断方法与回滚
+│   ├── 04-hardening.md            ← 加固方案：三平台阻断方法与回滚
+│   └── 05-official-response.md    ← 官方回应逐条对照：事实面敲定
 ├── src/                           ← 还原代码摘录（原文逐字 + 批注头，见下表）
 │   ├── 01-sidecar-service.js      ← 采集入口 RepoSnapshotSidecarService
 │   ├── 02-archive-writer.js       ← 归档打包 + 增量 delta
@@ -22,6 +36,7 @@
 │   ├── 06-upload-worker.js        ← 上传状态机（失败退避/晋升/丢弃）
 │   ├── 07-pending-manager.js      ← 待传队列（接收哈希仅成功后落盘）
 │   └── 08-credential-parsing.js   ← 凭证响应解析（data.oss / callback）
+├── tools/                         ← 图表配置与报告构建脚本（可复现）
 ├── assets/
 │   ├── trace-chain.svg            ← 溯源链图
 │   ├── upload-flow.svg            ← 上传时序图
