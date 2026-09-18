@@ -27,7 +27,9 @@
 │   ├── 03-design-notes.md         ← 设计实现解析：10 个性能优化点点评 + 槽点
 │   ├── 04-hardening.md            ← 加固方案：三平台阻断方法与回滚
 │   └── 05-official-response.md    ← 官方回应逐条对照：事实面敲定
-├── src/                           ← 还原代码摘录（原文逐字 + 批注头，见下表）
+├── src/readable/                  ← 人类/agent 易读还原（keepNames 语义名 + prettier）
+│   └── README.md                  ← 阅读顺序与 captureBeforePromptUnsafe 局部变量表
+├── src/                           ← 原文逐字 minified 摘录（取证引用用这个）
 │   ├── 01-sidecar-service.js      ← 采集入口 RepoSnapshotSidecarService
 │   ├── 02-archive-writer.js       ← 归档打包 + 增量 delta
 │   ├── 03-encrypt-archive.js      ← 信封加密 AES-256-CTR + RSA-OAEP
@@ -36,7 +38,10 @@
 │   ├── 06-upload-worker.js        ← 上传状态机（失败退避/晋升/丢弃）
 │   ├── 07-pending-manager.js      ← 待传队列（接收哈希仅成功后落盘）
 │   └── 08-credential-parsing.js   ← 凭证响应解析（data.oss / callback）
-├── tools/                         ← 图表配置与报告构建脚本（可复现）
+├── tools/                         ← 可复现脚本（见 tools/README.md）
+│   ├── extract_snapshot.py        ← asar host bundle → src/readable 切片
+│   ├── beautify_snapshot.py       ← keepNames 回填 + 原文引用头
+│   └── build_report.py            ← docs → PDF
 ├── assets/
 │   ├── trace-chain.svg            ← 溯源链图
 │   ├── upload-flow.svg            ← 上传时序图
@@ -55,6 +60,8 @@
 
 意味着：对方持有解密私钥；`.git` 历史里的一切（含已删除文件、历史提交中的凭据）都在其可解密范围内。详见 [docs/01-trace-chain.md](docs/01-trace-chain.md)。
 
+走读从 [src/readable/](src/readable/) 开始。 **引用、取证、对照请用 [src/01-sidecar-service.js](src/01-sidecar-service.js) … [src/08-credential-parsing.js](src/08-credential-parsing.js)**（公开发行包 minified 原文摘录）。readable 是转写副本，每份文件头都链回对应原文，不当出处。
+
 ## 关键标识符对照（minified → 语义名）
 
 | 混淆名 | 语义名 | 职责 |
@@ -70,7 +77,9 @@
 
 ## 免责声明
 
-- 本仓库所有代码摘录自 ZCode Desktop 3.12.2 公开发行包，**原文逐字未美化**，仅截取理解链路所需最小片段
+- **出处**：ZCode Desktop 3.12.2 公开发行包 `resources/app.asar` → `out/host/index.js`（build `4e1c9d87`）
+- **可引用的原文**：`src/01-*.js` … `src/08-*.js`，minified **逐字摘录**，仅截取理解上传链路所需最小片段
+- **不可当出处**：`src/readable/` 是 keepNames 转写 + 格式化的走读副本，版权仍属原作；文件头写明对应原文路径
 - 目的是安全研究、用户知情权与防御加固（如何阻断），不提供任何滥用性内容
 - 原始代码版权归 Z.ai（智谱）所有；如有侵权请联系处理
 - 分析仅针对静态客户端代码与本地 artifacts，未对服务端做任何探测
@@ -87,3 +96,5 @@
 本报告的全部流程图，正是用 ZCode 驱动 GLM-5.3-Flash 调用 [mmdx](https://github.com/daidaiJ/mmdx)（mermaid → SVG/PNG 的渲染 CLI）生成的——而 mmdx 本身也是此前用 ZCode + GLM 开发的，驱动它的 skill 同样出自这套工作流（[my-skills/dev-tools/mermaid/SKILL.md](https://github.com/daidaiJ/my-skills/blob/master/dev-tools/mermaid/SKILL.md)）。
 
 用被告的锤子钉被告的罪证，再把罪证排版成 PDF 放进仓库。工具没有立场，用工具的人心里得有数。
+
+可读转写那一套（`tools/extract_snapshot.py` / `beautify_snapshot.py`）是开源 **Grok Build** 会话里写完的——拆的是 ZCode 的包，写锤子的换了一把。
