@@ -48,7 +48,7 @@ html = rf"""<!DOCTYPE html>
   .mono {{ font-family:Consolas,monospace; font-size:12px; }}
   .figure {{ margin:18px 0; text-align:center; }}
   .figure img {{ max-width:100%; height:auto; border:1px solid var(--line); border-radius:10px; background:#fff; }}
-  .figure svg {{ max-width:100% !important; height:auto !important; border:1px solid var(--line); border-radius:10px; background:#fff; }}
+  .figure svg {{ max-width:100% !important; height:auto !important; overflow:visible !important; border:1px solid var(--line); border-radius:10px; background:#fff; }}
   code {{ background:#eef2f7; border-radius:5px; padding:1px 6px; font-family:Consolas,monospace; font-size:12.5px; }}
   pre {{ background:#0f172a; color:#d7e3ff; border-radius:10px; padding:16px 18px; overflow-x:auto; font-size:12.5px; line-height:1.6; }}
   pre code {{ background:none; color:inherit; padding:0; }}
