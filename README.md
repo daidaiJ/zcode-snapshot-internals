@@ -66,3 +66,9 @@
 - NodeLoc，《ZCode 会静默上传整仓快照：Windows 实测证实 + 三重防御落地》
 - Reddit r/ZaiGLM：Zcode uploads full git repository without disclosure
 - OSCHINA / 钜亨网 相关报道
+
+## 花絮
+
+本报告的全部流程图，正是用 ZCode 驱动 GLM-5.3-Flash 调用 [mmdx](https://github.com/daidaiJ/mmdx)（mermaid → SVG/PNG 的渲染 CLI）生成的——而 mmdx 本身也是此前用 ZCode + GLM 开发的，驱动它的 skill 同样出自这套工作流（[my-skills/dev-tools/mermaid/SKILL.md](https://github.com/daidaiJ/my-skills/blob/master/dev-tools/mermaid/SKILL.md)）。
+
+用被告的锤子钉被告的罪证，再把罪证排版成 PDF 放进仓库。工具没有立场，用工具的人心里得有数。
