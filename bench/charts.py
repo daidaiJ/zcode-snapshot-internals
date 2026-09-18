@@ -83,9 +83,10 @@ def chart_scan():
         ax.set_title(label)
         ax.set_ylim(0, max(vals) * 1.22)
         ax.set_ylabel("扫描墙钟 (s)" if ax is axes[0] else "")
+    axes[1].set_ylim(0, data[("l", "1c2g")] / 1000 * 1.45)
     axes[1].annotate("1C → 2C：+0 核增益\n（串行 await，单文件 ~0.55ms）",
-                     xy=(2, data[("l", "2c4g")] / 1000), xytext=(0.86, 0.60),
-                     textcoords="axes fraction", fontsize=12, color="#333",
+                     xy=(2, data[("l", "2c4g")] / 1000), xytext=(0.30, 0.95),
+                     textcoords="axes fraction", fontsize=12, color="#333", va="top",
                      arrowprops=dict(arrowstyle="->", color="#333", lw=1.1))
     fig.suptitle("扫描车道（lstat + 16KB 采样）· 配额三档对比", fontsize=15.5, y=1.02)
     save(fig, "scan-cpu-scaling")
@@ -119,15 +120,15 @@ def chart_pipeline():
                     ha="center", va="bottom", fontsize=10.5)
         ax.set_xticks(x, tiers)
         ax.set_title(label)
-        ax.set_ylim(0, max(walls) * 1.30)
+        ax.set_ylim(0, max(walls) * 1.45)
         if ax is axes[0]:
             ax.set_ylabel("打包+加密耗时 (s)")
             ax.legend(loc="upper right", framealpha=0.9)
     if ("l", "1c2g") in data and ("l", "2c4g") in data:
         sp = data[("l", "1c2g")][0] / data[("l", "2c4g")][0]
         axes[1].annotate(f"2C 加速比仅 {sp:.2f}×\n1C 下 CPU≈墙钟（单核打满）",
-                         xy=(2, data[("l", "2c4g")][0]), xytext=(0.52, 0.72),
-                         textcoords="axes fraction", fontsize=12, color="#333",
+                         xy=(2, data[("l", "2c4g")][0]), xytext=(0.30, 0.95),
+                         textcoords="axes fraction", fontsize=12, color="#333", va="top",
                          arrowprops=dict(arrowstyle="->", color="#333", lw=1.1))
     fig.suptitle("打包+加密全链路（扫描→tar.gz→AES→双 sha256）· 配额三档", fontsize=15.5, y=1.02)
     save(fig, "pipeline-cpu-scaling")
@@ -172,15 +173,17 @@ def chart_e2e():
 # ── 4. 上传通道：RSS 不随体积放大（Node 22 惰性 Blob）+ 吞吐 ──
 def chart_upload_rss():
     runs = [
-        ("POST 256MB\n1C2G", "upost-256m-1c2g"), ("POST 256MB\n2C4G", "upost-256m-2c4g"),
-        ("POST 1.5GB\n1C2G", "upost-1g5-1c2g"), ("POST 1.5GB\n1C4G", "upost-1g5-1c4g"),
-        ("POST 1.5GB\n2C4G", "upost-1g5-2c4g"), ("PUT 1.5GB\n1C2G", "uput-1g5-1c2g"),
+        ("POST 256MB·1C2G", "upost-256m-1c2g"), ("POST 256MB·2C4G", "upost-256m-2c4g"),
+        ("POST 1.5GB·1C2G", "upost-1g5-1c2g"), ("POST 1.5GB·1C4G", "upost-1g5-1c4g"),
+        ("POST 1.5GB·2C4G", "upost-1g5-2c4g"), ("PUT 1.5GB·1C2G", "uput-1g5-1c2g"),
     ]
     runs = [(lbl, load(n)) for lbl, n in runs]
     runs = [(lbl, r) for lbl, r in runs if r]
     if not runs:
         return
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.3))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12.5, 4.8))
+    # 顶部留白给 suptitle + 两行子图标题，底部留白给斜置的单行 x 标签
+    fig.subplots_adjust(top=0.70, bottom=0.20)
     x = range(len(runs))
     rss = [r["memory"]["peakRssBytes"] / 1048576 for _, r in runs]
     mbps = [r["effectiveMbps"] for _, r in runs]
@@ -189,21 +192,18 @@ def chart_upload_rss():
     b1 = ax1.bar(x, rss, 0.6, color=colors, edgecolor="#333", linewidth=0.6)
     for b, v in zip(b1, rss):
         ax1.text(b.get_x() + b.get_width() / 2, v + 3, f"{v:.0f}", ha="center", fontsize=11)
-    ax1.set_xticks(x, [lbl for lbl, _ in runs], fontsize=10)
+    ax1.set_xticks(x, [lbl for lbl, _ in runs], fontsize=10, rotation=20, ha="right")
     ax1.set_ylabel("进程 RSS 峰值 (MB)")
     ax1.set_ylim(0, max(rss) * 1.25)
-    ax1.set_title("整文件 Blob 的 POST 并未放大内存\n（Node 22 openAsBlob 文件惰性背书）")
-    ax1.axhline(1536, color="#999", lw=1, ls="--")
-    ax1.text(0.02, 0.96, "虚线=产物体积 1536MB（未触及）", transform=ax1.transAxes,
-             fontsize=10.5, color="#777", va="top")
+    ax1.set_title("整文件 Blob 的 POST 并未放大内存\n（RSS 与 16× 产物体积差无关）")
     b2 = ax2.bar(x, mbps, 0.6, color=CBLUE, edgecolor="#333", linewidth=0.6)
     for b, v in zip(b2, mbps):
         ax2.text(b.get_x() + b.get_width() / 2, v + 40, f"{v:.0f}", ha="center", fontsize=11)
-    ax2.set_xticks(x, [lbl for lbl, _ in runs], fontsize=10)
+    ax2.set_xticks(x, [lbl for lbl, _ in runs], fontsize=10, rotation=20, ha="right")
     ax2.set_ylabel("回环吞吐 (Mbps)")
     ax2.set_ylim(0, max(mbps) * 1.22)
     ax2.set_title("回环吞吐：1C 下 POST ≈ 1.6-1.9 Gbps 封顶\n（CPU 单核打满，2C 提升有限）")
-    fig.suptitle("上传通道：POST(openAsBlob) vs PUT(流式) · 内存与吞吐", fontsize=15.5, y=1.04)
+    fig.suptitle("上传通道：POST(openAsBlob) vs PUT(流式) · 内存与吞吐", fontsize=15.5, y=0.99)
     save(fig, "upload-rss-throughput")
 
 
@@ -212,11 +212,14 @@ def chart_cycle():
     r = load("cycle-l-1c2g")
     if not r:
         return
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10.5, 4.0))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10.5, 4.4))
+    # 顶部留白给 suptitle + 两行子图标题
+    fig.subplots_adjust(top=0.70, bottom=0.13)
     sizes = [r["baselineEncryptedBytes"] / 1048576, r["incrementEncryptedBytes"] / 1048576]
     b = ax1.bar(["baseline 密文", "increment 密文"], sizes, 0.5, color=[CBLUE, C1],
                 edgecolor="#333", linewidth=0.6)
     ax1.set_yscale("log")
+    ax1.set_ylim(sizes[1] / 4, sizes[0] * 4)
     ax1.set_ylabel("密文体积 (MB, 对数轴)")
     for bb, v in zip(b, sizes):
         ax1.text(bb.get_x() + bb.get_width() / 2, v * 1.35, f"{v:.2f}MB", ha="center", fontsize=12.5)
@@ -229,7 +232,7 @@ def chart_cycle():
     ax2.set_ylabel("文件数")
     ax2.set_ylim(0, max(det) * 1.25)
     ax2.set_title("size-only delta：等长修改 100% 漏检\n（mtime/内容哈希均未参与判定）")
-    fig.suptitle("cycle（L 档）：size-only 增量的漏报面", fontsize=15.5, y=1.03)
+    fig.suptitle("cycle（L 档）：size-only 增量的漏报面", fontsize=15.5, y=0.99)
     save(fig, "cycle-delta-miss")
 
 
@@ -312,7 +315,8 @@ def chart_io():
     ax2.set_ylim(0, max(wchar) * 1.28)
     ax2.set_title(f"写账单：全链路共写 {total_w:.0f}MB（明文+密文双写）")
     ax2.axhline(payload_mb, color=CBAD, lw=1.2, ls="--")
-    ax2.text(0.02, payload_mb * 1.06, f"最终上传的密文仅 {payload_mb:.0f}MB", fontsize=10.5, color=CBAD)
+    ax2.text(0.40, payload_mb * 1.10, f"最终上传的密文 {payload_mb:.0f}MB",
+             fontsize=10, color=CBAD)
     fig.suptitle(f"IO 账单（e2e M 档：{plain_mb:.0f}MB 仓库）：搬运 {(total_r + total_w):.0f}MB"
                  f" ≈ 密文产物的 {(total_r + total_w) / payload_mb:.0f}×", fontsize=15.5, y=1.04)
     save(fig, "io-ledger")
