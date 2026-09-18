@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rename keepNames idents in src/readable and stamp legal headers.
+"""Rename keepNames idents in src/readable-1.0 and stamp legal headers.
 
 Readable files are reconstructions. Cite src/01-*.js … src/08-*.js (verbatim
 minified excerpts from app.asar), not this directory.
@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "src" / "readable"
+OUT = ROOT / "src" / "readable-1.0"
 IDENT_TO_NAME: dict[str, str] = {}
 
 HEADER_RE = re.compile(r"^/\*\*.*?\*/\s*", re.S)

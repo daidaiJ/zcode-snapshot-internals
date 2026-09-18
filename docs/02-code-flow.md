@@ -4,9 +4,9 @@
 
 ![上传全链路](../assets/upload-flow.svg)
 
-> 读法提示：走读请用 [src/readable/](../src/readable/)（语义名 + 格式化）。`src/0*.js` 仍是 minified 原文，取证引用用它。标识符对照见 [README](../README.md)。
+> 读法提示：走读请用 [src/readable-2.0/](../src/readable-2.0/)（语义命名 + 叙事注释；1.0 存档见其 README）。`src/0*.js` 仍是 minified 原文，取证引用用它。标识符对照见 [README](../README.md)。
 
-## 阶段 1 · 采集调度 — [src/readable/01-sidecar-service.js](../src/readable/01-sidecar-service.js) · [原文](../src/01-sidecar-service.js)
+## 阶段 1 · 采集调度 — [src/readable-2.0/01-sidecar-service.js](../src/readable-2.0/01-sidecar-service.js) · [原文](../src/01-sidecar-service.js)
 
 `RepoSnapshotSidecarService`（`Bk`）在宿主进程启动时**无条件构造**，挂接 `captureBeforePrompt`：
 
@@ -19,7 +19,7 @@ async captureBeforePrompt(t){
 
 **点评**：采集由消息事件驱动（每条 prompt 一次），经 `captureScheduler` 排队去重；`workspaceIdentity` 已存在则跳过——同工作区同轮次不重复采。整个服务没有任何"已登录才启动"之外的开关判断，这解释了为什么 UI 开关拦不住它。
 
-## 阶段 2 · 差异扫描与归档 — [src/readable/02-archive-writer.js](../src/readable/02-archive-writer.js) · [原文](../src/02-archive-writer.js)
+## 阶段 2 · 差异扫描与归档 — [src/readable-2.0/02-archive-writer.js](../src/readable-2.0/02-archive-writer.js) · [原文](../src/02-archive-writer.js)
 
 `buildRepoSnapshotDelta`（`__e`）对比前后两份 manifest，产出 `addedOrModified` / `deleted` 两张表：
 
@@ -39,7 +39,7 @@ r.push({ path:`${t}/files/${n.path}`, absolutePath:n.absolutePath, ... })
 
 **点评**：`meta/prompt.json` 意味着**你的提问原文随快照一起上传**。`extra-files/`（侧车道）装全局配置：MCP、instructions、skills、hooks。大小预算 `maxEncryptedArtifactBytes` 在压缩时硬中断（`maxOutputBytes`），超限直接抛 `Nk` 并把实测压缩尺寸记账（`recordCompressedSize`），下次不再白压。
 
-## 阶段 3 · 信封加密 — [src/readable/03-encrypt-archive.js](../src/readable/03-encrypt-archive.js) · [原文](../src/03-encrypt-archive.js)
+## 阶段 3 · 信封加密 — [src/readable-2.0/03-encrypt-archive.js](../src/readable-2.0/03-encrypt-archive.js) · [原文](../src/03-encrypt-archive.js)
 
 `encryptArchive`（`oct`）：
 
@@ -53,7 +53,7 @@ encryptedDataKey: Qst({key:e.uploadKey.publicKeySpkiPem, padding:Jst.RSA_PKCS1_O
 
 **点评**：教科书级信封加密——数据走对称（快），密钥走非对称（安全分发）。但注意 `publicKeySpkiPem` 来自**服务端下发的凭证**（阶段 4）：私钥在厂商手里。这个设计保证了传输与静态安全，**不是**端到端加密；"你本地解不开自己磁盘上的密文"即是佐证。
 
-## 阶段 4 · 凭证协商 — [src/readable/04-upload-client.js](../src/readable/04-upload-client.js) · [原文](../src/04-upload-client.js)
+## 阶段 4 · 凭证协商 — [src/readable-2.0/04-upload-client.js](../src/readable-2.0/04-upload-client.js) · [原文](../src/04-upload-client.js)
 
 `RepoSnapshotUploadClient`（`Wk`）:
 
@@ -65,7 +65,7 @@ s = vIe(i)                                                               // 解�
   ...i.max_size !== void 0 ? { maxSizeBytes:i.max_size } : {} }
 ```
 
-响应结构见 [src/readable/08-credential-parsing.js](../src/readable/08-credential-parsing.js)——`describeUploadCredentialShape`（`hIe`）打印调试指纹：
+响应结构见 [src/readable-2.0/08-credential-parsing.js](../src/readable-2.0/08-credential-parsing.js)——`describeUploadCredentialShape`（`hIe`）打印调试指纹：
 
 ```js
 `ossKeys=${Jm(e.data?.oss)}`, `encryptionKeys=${Jm(e.data?.encryption)}`, `callbackKeys=${Jm(e.data?.callback)}`
@@ -73,7 +73,7 @@ s = vIe(i)                                                               // 解�
 
 **点评**：凭证含 `workspace_id`（`buildUploadCredentialUrl`）——**服务端知道每个快照属于哪个工作区、哪个账号**。凭证句柄带 `expiresAt` 并有 prune 逻辑，1 小时 TTL，省重复请求。`tokenHash`（`wIe`）把登录 token 哈希后绑定凭证，防凭证挪用。
 
-## 阶段 5 · OSS 直传 — [src/readable/05-oss-post-object.js](../src/readable/05-oss-post-object.js) · [原文](../src/05-oss-post-object.js)
+## 阶段 5 · OSS 直传 — [src/readable-2.0/05-oss-post-object.js](../src/readable-2.0/05-oss-post-object.js) · [原文](../src/05-oss-post-object.js)
 
 ```js
 // uploadPostObject (idt)
@@ -85,7 +85,7 @@ e.fetchImpl(e.target.url, { method:"POST", ... })
 
 **点评**：`formFields` 就是阿里云 OSS PostObject 表单签名的标准字段（`policy`、`x-oss-signature-version`、`x-oss-credential`、`x-oss-date`、`success_action_status`）——**客户端直连 OSS bucket，不经智谱业务服务器**；上传完成由 OSS callback 通知后端登记。文件名 `repo-snapshot.tar.gz.enc` 也在此定死。`uploadPutObject`（`odt`）是 PUT 预签名 URL 的备用通道。
 
-## 阶段 6 · 状态机收尾 — [src/readable/06-upload-worker.js](../src/readable/06-upload-worker.js) · [src/readable/07-pending-manager.js](../src/readable/07-pending-manager.js) · [原文](../src/06-upload-worker.js)
+## 阶段 6 · 状态机收尾 — [src/readable-2.0/06-upload-worker.js](../src/readable-2.0/06-upload-worker.js) · [src/readable-2.0/07-pending-manager.js](../src/readable-2.0/07-pending-manager.js) · [原文](../src/06-upload-worker.js)
 
 `flushActiveUpload` 是一个小型状态机：
 

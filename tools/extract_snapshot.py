@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Slice repo-snapshot functions from a minified ZCode host bundle.
 
-Output under src/readable/ is a STUDY AID. The citable originals are the
+Output under src/readable-1.0/ is a STUDY AID. The citable originals are the
 verbatim minified excerpts in src/01-*.js … src/08-*.js (and app.asar itself).
 Do not present the readable copy as ZCode source.
 
-Authored in a Grok Build session.
+Authored in a Grok Build session; see also readable2.py (1.0 -> 2.0 upgrade).
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BUNDLE = ROOT / ".extract" / "host-index.js"
-OUT_DIR = ROOT / "src" / "readable"
+OUT_DIR = ROOT / "src" / "readable-1.0"
 VERBATIM_DIR = ROOT / "src" / "verbatim"
 NAME_RE = re.compile(r'a\(([^,()]+),"([^"]+)"\)')
 INTEREST = re.compile(

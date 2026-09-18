@@ -1,4 +1,8 @@
-# Readable reconstruction
+# Readable 1.0 — keepNames 转写（存档）
+
+> 📌 **本目录已被 [2.0](../readable-2.0/) 接替**，仅作存档保留：2.0 在此基础上补齐了局部变量语义名、Node 别名还原、常量命名与叙事注释，并修复一处转写损坏（见 [2.0 README 的修正对照](../readable-2.0/README.md#相对-10-的修正与改动全部经骨架校验核对)）。
+>
+> 新读者请从 **[readable-2.0](../readable-2.0/README.md)** 进入；本版 README 的 locals 对照表已被 2.0 吸收。引用、取证仍以 `../01-*.js` … `../08-*.js` minified 逐字摘录为准 —— 1.0 与 2.0 都只是走读副本。
 
 走读副本，**不是 ZCode 原文**。引用、取证、对照用右侧原文摘录。
 

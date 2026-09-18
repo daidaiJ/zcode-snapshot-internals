@@ -27,8 +27,10 @@
 │   ├── 03-design-notes.md         ← 设计实现解析：10 个性能优化点点评 + 槽点
 │   ├── 04-hardening.md            ← 加固方案：三平台阻断方法与回滚
 │   └── 05-official-response.md    ← 官方回应逐条对照：事实面敲定
-├── src/readable/                  ← 人类/agent 易读还原（keepNames 语义名 + prettier）
-│   └── README.md                  ← 阅读顺序与 captureBeforePromptUnsafe 局部变量表
+├── src/readable-2.0/              ← 走读副本 2.0（语义命名 + 注释，从这里开始读）
+│   └── README.md                  ← 入口：命名依据、minified 对照表、修正记录
+├── src/readable-1.0/              ← 走读副本 1.0（keepNames + prettier，存档）
+│   └── README.md                  ← 已被 2.0 接替，内含跳转指引
 ├── src/                           ← 原文逐字 minified 摘录（取证引用用这个）
 │   ├── 01-sidecar-service.js      ← 采集入口 RepoSnapshotSidecarService
 │   ├── 02-archive-writer.js       ← 归档打包 + 增量 delta
@@ -39,8 +41,11 @@
 │   ├── 07-pending-manager.js      ← 待传队列（接收哈希仅成功后落盘）
 │   └── 08-credential-parsing.js   ← 凭证响应解析（data.oss / callback）
 ├── tools/                         ← 可复现脚本（见 tools/README.md）
-│   ├── extract_snapshot.py        ← asar host bundle → src/readable 切片
-│   ├── beautify_snapshot.py       ← keepNames 回填 + 原文引用头
+│   ├── extract_snapshot.py        ← asar host bundle → src/readable-1.0 切片
+│   ├── beautify_snapshot.py       ← keepNames 回填 + 原文引用头（产出 1.0）
+│   ├── readable2.py               ← 1.0 → src/readable-2.0（语义命名 + 注释，校验型引擎）
+│   ├── readable2_map.py           ← 2.0 策划数据：命名/注释知识库
+│   ├── skeleton_check.py          ← 1.0 vs 2.0 骨架等价校验（防转写损坏）
 │   └── build_report.py            ← docs → PDF
 ├── assets/
 │   ├── trace-chain.svg            ← 溯源链图
@@ -60,9 +65,11 @@
 
 意味着：对方持有解密私钥；`.git` 历史里的一切（含已删除文件、历史提交中的凭据）都在其可解密范围内。详见 [docs/01-trace-chain.md](docs/01-trace-chain.md)。
 
-走读从 [src/readable/](src/readable/) 开始。 **引用、取证、对照请用 [src/01-sidecar-service.js](src/01-sidecar-service.js) … [src/08-credential-parsing.js](src/08-credential-parsing.js)**（公开发行包 minified 原文摘录）。readable 是转写副本，每份文件头都链回对应原文，不当出处。
+走读从 [src/readable-2.0/](src/readable-2.0/README.md) 开始（1.0 为[存档](src/readable-1.0/README.md)）。**引用、取证、对照请用 [src/01-sidecar-service.js](src/01-sidecar-service.js) … [src/08-credential-parsing.js](src/08-credential-parsing.js)**（公开发行包 minified 原文摘录）。readable 1.0/2.0 都是转写副本，每份文件头都链回对应原文，不当出处。
 
 ## 关键标识符对照（minified → 语义名）
+
+完整对照表（含来源分级：✓原名 / Node 别名 / ※按用途）见 [src/readable-2.0/README.md](src/readable-2.0/README.md)。速览：
 
 | 混淆名 | 语义名 | 职责 |
 | --- | --- | --- |
@@ -79,7 +86,7 @@
 
 - **出处**：ZCode Desktop 3.12.2 公开发行包 `resources/app.asar` → `out/host/index.js`（build `4e1c9d87`）
 - **可引用的原文**：`src/01-*.js` … `src/08-*.js`，minified **逐字摘录**，仅截取理解上传链路所需最小片段
-- **不可当出处**：`src/readable/` 是 keepNames 转写 + 格式化的走读副本，版权仍属原作；文件头写明对应原文路径
+- **不可当出处**：`src/readable-1.0/`、`src/readable-2.0/` 是 keepNames 转写 + 语义命名的走读副本，版权仍属原作；文件头写明对应原文路径
 - 目的是安全研究、用户知情权与防御加固（如何阻断），不提供任何滥用性内容
 - 原始代码版权归 Z.ai（智谱）所有；如有侵权请联系处理
 - 分析仅针对静态客户端代码与本地 artifacts，未对服务端做任何探测
@@ -90,6 +97,9 @@
 - NodeLoc，《ZCode 会静默上传整仓快照：Windows 实测证实 + 三重防御落地》
 - Reddit r/ZaiGLM：Zcode uploads full git repository without disclosure
 - OSCHINA / 钜亨网 相关报道
+- 同主题独立逆向 / 校验项目（GitHub）：
+  - [vibe-coding-labs/zcode-reverse-engineer](https://github.com/vibe-coding-labs/zcode-reverse-engineer) — ZCode 工作区/快照/Wiki 子系统协议拆解，与本仓库命名互证
+  - [yizeyi18/zcode-upload-verify](https://github.com/yizeyi18/zcode-upload-verify) — host bundle 静态审计脚本（开关不拦截上传的启发式验证）
 
 ## 花絮
 
