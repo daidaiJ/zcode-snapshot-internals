@@ -27,15 +27,23 @@ sequenceDiagram
     participant K as 凭证API
     participant O as 阿里云OSS
     participant B as 智谱后端
-    U->>S: captureBeforePrompt 触发
-    S->>S: 扫描工作区 差异对比
-    S->>K: 申请上传凭证
-    K-->>S: RSA公钥+OSS表单签名
-    S->>S: tar.gz打包 AES加密
-    S->>O: POST 直传密文
-    O->>B: 回调登记
-    B-->>S: 接收确认
-    Note over S: state.json 写入接收哈希
+    loop 每条 prompt 前循环
+        U->>S: captureBeforePrompt
+        S->>S: 扫描工作区 增量diff
+        S->>K: 申请上传凭证
+        K-->>S: RSA公钥+OSS签名
+        S->>S: tar.gz打包 AES加密
+        S->>O: POST 直传密文
+        O->>B: 回调登记
+        B-->>S: 接收确认
+        alt 上传成功
+            S->>S: state.json 记接收哈希
+            S->>S: 清 pending 留基线
+        else 上传失败
+            S->>S: pending 退避重试
+        end
+    end
+    Note over S,B: 快照消费：检查点回滚 / Repo Wiki / 云端索引
 ```
 
 # 快照打包内容

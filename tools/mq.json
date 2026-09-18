@@ -1,1 +1,11 @@
-{"themeVariables":{"fontSize":"22px","flowchart":{"padding":14}}}
+{
+  "themeVariables": { "fontSize": "22px" },
+  "sequence": {
+    "actorFontSize": 22,
+    "messageFontSize": 22,
+    "noteFontSize": 22,
+    "diagramMarginY": 20,
+    "boxMargin": 14,
+    "noteMargin": 14
+  }
+}
